@@ -7,3 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+User.create!(firstname: 'John', lastname: 'Doe', email: 'john.doe@example.com', password: 'password123' )
+Language.create!(name: 'Ruby', skill: 6)
+Language.create!(name: 'Python', skill: 2)
+Course.create!(name: 'Ruby to Python', 
+              from_language_id:Language.find_by(name: 'Ruby').id, 
+              to_language_id: Language.find_by(name: 'Python').id,
+              user_id: User.find_by(firstname: 'John').id,
+              lesson: 'Intro to Python')
