@@ -9,8 +9,8 @@
 #   end
 
 User.create!(firstname: 'John', lastname: 'Doe', email: 'john.doe@example.com', password: 'password123' )
-Language.create!(name: 'Ruby', skill: 6)
-Language.create!(name: 'Python', skill: 2)
+Language.create!(name: 'Ruby')
+Language.create!(name: 'Python')
 Course.create!(name: 'Ruby to Python', 
               from_language_id:Language.find_by(name: 'Ruby').id, 
               to_language_id: Language.find_by(name: 'Python').id,
