@@ -9,5 +9,8 @@ RSpec.describe Course, type: :model do
 
   describe 'validations' do
     it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:lesson) }
+    it { should validate_presence_of(:from_language_id) }
+    it { should validate_presence_of(:to_language_id) }
   end
 end
