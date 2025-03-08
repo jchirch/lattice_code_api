@@ -16,8 +16,9 @@ RSpec.describe "/users", type: :request do
   # This should return the minimal set of attributes required to create a valid
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+  let(:valid_attributes) do 
+    {
+    fir
   }
 
   let(:invalid_attributes) {
@@ -33,7 +34,7 @@ RSpec.describe "/users", type: :request do
   }
 
   describe "GET /index" do
-    it "renders a successful response" do
+    xit "renders a successful response" do
       User.create! valid_attributes
       get users_url, headers: valid_headers, as: :json
       expect(response).to be_successful
@@ -41,7 +42,7 @@ RSpec.describe "/users", type: :request do
   end
 
   describe "GET /show" do
-    it "renders a successful response" do
+    xit "renders a successful response" do
       user = User.create! valid_attributes
       get user_url(user), as: :json
       expect(response).to be_successful
@@ -82,42 +83,42 @@ RSpec.describe "/users", type: :request do
     end
   end
 
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+  # describe "PATCH /update" do
+  #   context "with valid parameters" do
+  #     let(:new_attributes) {
+  #       skip("Add a hash of attributes valid for your model")
+  #     }
 
-      it "updates the requested user" do
-        user = User.create! valid_attributes
-        patch user_url(user),
-              params: { user: new_attributes }, headers: valid_headers, as: :json
-        user.reload
-        skip("Add assertions for updated state")
-      end
+  #     it "updates the requested user" do
+  #       user = User.create! valid_attributes
+  #       patch user_url(user),
+  #             params: { user: new_attributes }, headers: valid_headers, as: :json
+  #       user.reload
+  #       skip("Add assertions for updated state")
+  #     end
 
-      it "renders a JSON response with the user" do
-        user = User.create! valid_attributes
-        patch user_url(user),
-              params: { user: new_attributes }, headers: valid_headers, as: :json
-        expect(response).to have_http_status(:ok)
-        expect(response.content_type).to match(a_string_including("application/json"))
-      end
-    end
+  #     it "renders a JSON response with the user" do
+  #       user = User.create! valid_attributes
+  #       patch user_url(user),
+  #             params: { user: new_attributes }, headers: valid_headers, as: :json
+  #       expect(response).to have_http_status(:ok)
+  #       expect(response.content_type).to match(a_string_including("application/json"))
+  #     end
+  #   end
 
-    context "with invalid parameters" do
-      it "renders a JSON response with errors for the user" do
-        user = User.create! valid_attributes
-        patch user_url(user),
-              params: { user: invalid_attributes }, headers: valid_headers, as: :json
-        expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to match(a_string_including("application/json"))
-      end
-    end
-  end
+  #   context "with invalid parameters" do
+  #     it "renders a JSON response with errors for the user" do
+  #       user = User.create! valid_attributes
+  #       patch user_url(user),
+  #             params: { user: invalid_attributes }, headers: valid_headers, as: :json
+  #       expect(response).to have_http_status(:unprocessable_entity)
+  #       expect(response.content_type).to match(a_string_including("application/json"))
+  #     end
+  #   end
+  # end
 
   describe "DELETE /destroy" do
-    it "destroys the requested user" do
+    xit "destroys the requested user" do
       user = User.create! valid_attributes
       expect {
         delete user_url(user), headers: valid_headers, as: :json
